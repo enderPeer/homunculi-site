@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homunculi</title>
+<meta name="description" content="Homunculi: a from-scratch character-level language model that writes in the Library of Babel's 29-symbol alphabet.">
+<style>
+  :root { --bg: #f6f4ef; --fg: #1d1b18; --muted: #6b665c; --card: #ffffff; --line: #e4dfd3; --accent: #3b5bdb; --accent-fg: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14130f; --fg: #ece8df; --muted: #a39d90; --card: #1d1b16; --line: #2e2b24; --accent: #7c95ff; --accent-fg: #0d0f1a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: var(--bg); color: var(--fg); font: 17px/1.55 Georgia, "Iowan Old Style", serif; padding: 24px 16px; }
+  main { width: 100%; max-width: 640px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 40px 32px; }
+  .mark { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 13px; letter-spacing: .08em; color: var(--muted); }
+  h1 { font-size: 40px; line-height: 1.1; margin: 10px 0 14px; font-weight: 600; }
+  p { margin: 0 0 14px; }
+  .muted { color: var(--muted); font-size: 15px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 22px; }
+  a.button { display: inline-block; text-decoration: none; padding: 13px 26px; border-radius: 10px; font: 600 16px/1 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  a.primary { background: var(--accent); color: var(--accent-fg); }
+  a.secondary { border: 1px solid var(--line); color: var(--fg); }
+  a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; }
+  footer { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark">abcdefghijklmnopqrstuvwxyz ,.</div>
+  <h1>Welcome to Homunculi</h1>
+  <p>Homunculi is a small language model built from scratch. It reads and writes only the
+  29 symbols of the Library of Babel: twenty-six lowercase letters, the space, the comma and the
+  period. Numbers are written out as words.</p>
+  <p>The chat below runs our newest and strongest model on a home GPU cluster. It answers
+  questions about cryptocurrencies and foreign exchange, and about cybernetics and AI, by quoting
+  its sources, and it chats about everything else.</p>
+  <div class="actions">
+    <a class="button primary" id="chat" href="https://reseller-grip-infrared-example.trycloudflare.com/">Chat</a>
+    <a class="button secondary" href="https://github.com/enderPeer/homunculi">Repository</a>
+  </div>
+  <p class="muted" id="model">Research preview. Education only: no investment, trading, tax or legal advice,
+  no live prices and no forecasts. Answers can be wrong; check the cited source.</p>
+  <footer class="muted">The chat is served from a home cluster through a temporary tunnel, so it may
+  be offline at times. The repository is private for now.</footer>
+</main>
+<script>
+  // The chat address changes when the tunnel restarts; endpoint.json holds the current one.
+  fetch("endpoint.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (e) {
+      if (!e || !e.chat_url) return;
+      document.getElementById("chat").href = e.chat_url;
+    })
+    .catch(function () {});
+</script>
+</body>
+</html>
