@@ -54,18 +54,16 @@ const endpointReady = readJson("endpoint.json").then((endpoint) => {
   write("endpoint-note", "The current chat addresses could not be loaded. Please refresh to try again.");
   return null;
 });
-endpointReady.then(async (endpoint) => {
-  const catalogUrl = safeUrl(endpoint && endpoint.model_status_url);
-  if (!catalogUrl) return;
-  const catalog = await readJson(catalogUrl);
+function renderCatalog(catalog, endpoint) {
   if (!Array.isArray(catalog.modes)) return;
   const labels = { ready: "Ready to chat", pending: "Not yet available", offline: "Currently offline" };
   catalog.modes.forEach((mode) => {
     if (!["old", "new", "ultra"].includes(mode.id) || !labels[mode.status]) return;
     write(`${mode.id}-status`, labels[mode.status]);
+    if (mode.id === "new") activate("new-chat", endpoint.new_url, mode.status === "pending" ? "Preview next model" : "Open next model");
   });
-}).catch(() => { /* Keep configured/preview labels when live status is unavailable. */ });
-const humanState = (value) => typeof value === "string" ? value.replace(/[_-]/g, " ").replace(/^./, (letter) => letter.toUpperCase()) : null;
+}
+const humanState = (value) => typeof value === "string" ? (value === "running" ? "training" : value).replace(/[_-]/g, " ").replace(/^./, (letter) => letter.toUpperCase()) : null;
 function utcDate(value) {
   if (!value) return null;
   const date = new Date(value);
@@ -102,13 +100,8 @@ function sourceResults(sources) {
   byId("extended-evaluation").classList.remove("pending-value");
   return measured.length;
 }
-endpointReady.then(async (endpoint) => {
-  const remote = safeUrl(endpoint && endpoint.training_status_url);
-  if (remote) {
-    try { return await readJson(remote); } catch (_) { /* Try the last published static report. */ }
-  }
-  return readJson("training-status.json");
-}).then((report) => {
+function renderTraining(report) {
+  if (!report || typeof report !== "object" || Array.isArray(report) || typeof report.status !== "string") throw new Error("Invalid training report");
   write("training-phase", humanState(report.status));
   const phaseSummary = {
     training: "The extended run is training on a larger corpus. A shared evaluation follows when it finishes.",
@@ -148,5 +141,41 @@ endpointReady.then(async (endpoint) => {
     }
   }
   const updated = utcDate(report.updatedAt);
-  if (updated) write("report-updated", `Last published report: ${updated}. This page shows published data, not a live connection to training.`);
-}).catch(() => { /* A missing report leaves explicit pending states. */ });
+  if (updated) write("report-updated", `Report updated: ${updated}. Refreshes every minute while this page is visible.`);
+}
+
+let refreshInFlight = false;
+let hasTrainingReport = false;
+async function refreshTraining(endpoint) {
+  const remote = safeUrl(endpoint && endpoint.training_status_url);
+  let report;
+  let useFallback = !remote;
+  if (remote) {
+    try { report = await readJson(remote); }
+    catch (error) {
+      // Never replace a successfully displayed report with a stale fallback.
+      if (hasTrainingReport) throw error;
+      useFallback = true;
+    }
+  }
+  if (useFallback) report = await readJson("training-status.json");
+  renderTraining(report);
+  hasTrainingReport = true;
+}
+async function refreshPublishedData(initial = false) {
+  if (refreshInFlight || (!initial && document.hidden)) return;
+  refreshInFlight = true;
+  try {
+    const endpoint = await endpointReady;
+    const requests = [refreshTraining(endpoint)];
+    const catalogUrl = safeUrl(endpoint && endpoint.model_status_url);
+    if (catalogUrl) requests.push(readJson(catalogUrl).then((catalog) => renderCatalog(catalog, endpoint)));
+    // Independent failures leave each section's last successfully rendered data intact.
+    await Promise.allSettled(requests);
+  } finally { refreshInFlight = false; }
+}
+refreshPublishedData(true);
+setInterval(() => refreshPublishedData(), 60_000);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) refreshPublishedData();
+});
