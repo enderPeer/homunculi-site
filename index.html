@@ -1,64 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Homunculi</title>
-<meta name="description" content="Homunculi: a from-scratch character-level language model that writes in the Library of Babel's 29-symbol alphabet.">
-<style>
-  :root { --bg: #f6f4ef; --fg: #1d1b18; --muted: #6b665c; --card: #ffffff; --line: #e4dfd3; --accent: #3b5bdb; --accent-fg: #ffffff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #14130f; --fg: #ece8df; --muted: #a39d90; --card: #1d1b16; --line: #2e2b24; --accent: #7c95ff; --accent-fg: #0d0f1a; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-         background: var(--bg); color: var(--fg); font: 17px/1.55 Georgia, "Iowan Old Style", serif; padding: 24px 16px; }
-  main { width: 100%; max-width: 640px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 40px 32px; }
-  .mark { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 13px; letter-spacing: .08em; color: var(--muted); }
-  h1 { font-size: 40px; line-height: 1.1; margin: 10px 0 14px; font-weight: 600; }
-  p { margin: 0 0 14px; }
-  .muted { color: var(--muted); font-size: 15px; }
-  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 22px; }
-  a.button { display: inline-block; text-decoration: none; padding: 13px 26px; border-radius: 10px; font: 600 16px/1 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  a.primary { background: var(--accent); color: var(--accent-fg); }
-  a.secondary { border: 1px solid var(--line); color: var(--fg); }
-  a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; }
-  footer { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Meet Homunculi, a small language model trained locally from scratch. Explore the original model, the next candidate, and Ultra mode, and follow the training experiment.">
+  <title>Homunculi — A small model, an ongoing experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-<main>
-  <div class="mark">abcdefghijklmnopqrstuvwxyz ,.</div>
-  <h1>Welcome to Homunculi</h1>
-  <p>Homunculi is a small language model built from scratch. It reads and writes only the
-  29 symbols of the Library of Babel: twenty-six lowercase letters, the space, the comma and the
-  period. Numbers are written out as words.</p>
-  <p>The chat below runs our newest and strongest model on a home GPU cluster. It answers
-  questions about cryptocurrencies and foreign exchange, and about cybernetics and AI, by quoting
-  its sources, and it chats about everything else.</p>
-  <div class="actions">
-    <a class="button primary" id="chat" href="https://reseller-grip-infrared-example.trycloudflare.com/">Chat</a>
-    <a class="button secondary" id="ultra" href="https://reseller-grip-infrared-example.trycloudflare.com/ultra">Ultra mode</a>
-    <a class="button secondary" id="specialist" href="https://promised-photographs-visits-interim.trycloudflare.com/">Specialist (experimental)</a>
-    <a class="button secondary" href="https://github.com/enderPeer/homunculi">Repository</a>
-  </div>
-  <p class="muted" id="model">Research preview. Education only: no investment, trading, tax or legal advice,
-  no live prices and no forecasts. Answers can be wrong; check the cited source.</p>
-  <footer class="muted">The chat is served from a home cluster through a temporary tunnel, so it may
-  be offline at times. The repository is private for now.</footer>
-</main>
-<script>
-  // The chat address changes when the tunnel restarts; endpoint.json holds the current one.
-  fetch("endpoint.json", { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (e) {
-      if (!e || !e.chat_url) return;
-      document.getElementById("chat").href = e.chat_url;
-      if (e.ultra_url) document.getElementById("ultra").href = e.ultra_url;
-      if (e.specialist_url) document.getElementById("specialist").href = e.specialist_url;
-    })
-    .catch(function () {});
-</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Homunculi home"><span class="brand-mark" aria-hidden="true">h</span>homunculi<span class="brand-period">.</span></a>
+    <nav aria-label="Main navigation"><a href="#experiment">The experiment</a><a href="#models">Models</a><a href="#training">Training journal</a></nav>
+    <a class="header-action" href="#models">Open chat <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Independently trained. Still learning.</p>
+        <h1 id="hero-title">A small model.<br>An <em>open question.</em></h1>
+        <p class="hero-description">How much can a little language model learn?<br class="desktop-break"> Homunculi is our hands-on experiment in finding out, one training run at a time.</p>
+        <div class="hero-actions"><a class="button primary" id="hero-chat" href="#models">Meet Homunculi <span aria-hidden="true">↗</span></a><a class="text-link" href="#training">Follow the next run <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-footnote">Built from scratch · Trained locally · Research preview</p>
+      </div>
+      <figure class="alphabet-art" aria-label="Twenty-nine symbols, arranged as the starting point of a language model">
+        <div class="art-corner">FIG. 01 / THE STARTING POINT</div>
+        <svg class="orbit" viewBox="0 0 520 520" role="img" aria-labelledby="orbit-title">
+          <title id="orbit-title">Twenty-nine symbols at the heart of Homunculi</title>
+          <defs>
+            <path id="alphabet-ring" d="M 260,260 m -191,0 a 191,191 0 1,1 382,0 a 191,191 0 1,1 -382,0"/>
+            <radialGradient id="sphere-light" cx="32%" cy="25%" r="80%"><stop offset="0" stop-color="#e7f0e8"/><stop offset="1" stop-color="#bdcebc"/></radialGradient>
+            <clipPath id="sphere-clip"><circle cx="260" cy="260" r="131"/></clipPath>
+          </defs>
+          <circle cx="260" cy="260" r="224" fill="none" stroke="#dce2d8" stroke-dasharray="2 7"/>
+          <circle cx="260" cy="260" r="164" fill="none" stroke="#dce2d8"/>
+          <path d="M 28 260 H 492 M 260 28 V 492" stroke="#dce2d8"/>
+          <text class="orbit-letters" fill="#637168"><textPath href="#alphabet-ring" textLength="1188" lengthAdjust="spacing">a b c d e f g h i j k l m n o p q r s t u v w x y z ␣ , . </textPath></text>
+          <circle cx="260" cy="260" r="131" fill="url(#sphere-light)"/>
+          <g fill="none" stroke="#28634b" opacity=".25" clip-path="url(#sphere-clip)"><ellipse cx="260" cy="260" rx="131" ry="37"/><ellipse cx="260" cy="260" rx="131" ry="80"/><ellipse cx="260" cy="260" rx="131" ry="114"/><ellipse cx="260" cy="260" rx="37" ry="131"/><ellipse cx="260" cy="260" rx="80" ry="131"/><ellipse cx="260" cy="260" rx="114" ry="131"/><path d="M129 260H391M260 129V391"/></g>
+          <circle cx="260" cy="260" r="80" fill="#f5f4ef"/>
+          <text x="260" y="273" text-anchor="middle" class="sphere-number">29</text>
+          <text x="260" y="297" text-anchor="middle" class="sphere-caption">SYMBOLS</text>
+          <circle cx="427" cy="208" r="7" fill="#28634b"/><circle cx="99" cy="342" r="4" fill="#28634b"/><circle cx="290" cy="38" r="4" fill="#c4ab77"/>
+        </svg>
+        <figcaption><span>abcdefghijklmnopqrstuvwxyz ,.</span><span class="art-plus" aria-hidden="true">+</span></figcaption>
+      </figure>
+    </section>
+    <div class="experiment-strip"><div class="wrap strip-inner"><span class="eyebrow">The next chapter</span><p>New tokens. Rotary positions. A longer training run.</p><a href="#training">See the experiment <span aria-hidden="true">↗</span></a></div></div>
+    <section class="models-section wrap section-space" id="models" aria-labelledby="models-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Find your starting point</p><h2 id="models-title">One experiment.<br>Three ways in.</h2></div><p>Keep the original within reach, explore the next candidate when it is ready, or open the dedicated Ultra experience.</p></div>
+      <div class="model-grid">
+        <article class="model-card original"><div class="model-top"><span class="model-index">01</span><span class="badge" id="old-status">Checking endpoint</span></div><div class="model-name"><h3>Classic</h3><span class="model-icon" aria-hidden="true">○</span></div><p>The established Homunculi model. A familiar starting point to chat with and compare as the experiment develops.</p><div class="model-details"><span>Role</span><span>The reference version</span></div><a class="model-link" id="old-chat" aria-disabled="true">Open Classic <span aria-hidden="true">↗</span></a></article>
+        <article class="model-card candidate"><div class="model-top"><span class="model-index">02</span><span class="badge" id="new-status">In development</span></div><div class="model-name"><h3>Next</h3><span class="model-icon" aria-hidden="true">◉</span></div><p>The new candidate introduces a token upgrade and rotary position embeddings. Follow its training as the next chapter takes shape.</p><div class="model-details"><span>Role</span><span>The next candidate</span></div><a class="model-link" id="new-chat" aria-disabled="true">Awaiting candidate <span aria-hidden="true">↗</span></a></article>
+        <article class="model-card ultra"><div class="model-top"><span class="model-index">03</span><span class="badge" id="ultra-status">Checking endpoint</span></div><div class="model-name"><h3>Ultra</h3><span class="model-icon" aria-hidden="true">✳</span></div><p>The experimental agent mode, with memory, reflection, subagents, a calculator, and a clock. Available alongside the model versions.</p><div class="model-details"><span>Role</span><span>The experimental mode</span></div><a class="model-link" id="ultra-chat" aria-disabled="true">Open Ultra <span aria-hidden="true">↗</span></a></article>
+      </div>
+      <p class="endpoint-note" id="endpoint-note" aria-live="polite">Loading the current chat addresses…</p>
+      <noscript><p class="endpoint-note">Enable JavaScript to load the current chat addresses. The site is a static introduction; the chat runs separately.</p></noscript>
+    </section>
+    <section class="experiment-section wrap section-space" id="experiment" aria-labelledby="experiment-title">
+      <div class="experiment-intro"><p class="eyebrow">02 / Under the surface</p><h2 id="experiment-title">Small enough<br>to stay curious.</h2><p>Homunculi began with the Library of Babel’s twenty-nine symbols: lowercase letters, a space, a comma, and a period. A tiny alphabet becomes a way to study how language emerges from training.</p><a class="text-link" id="repository" href="https://github.com/enderPeer/homunculi">Explore the project <span aria-hidden="true">↗</span></a></div>
+      <div class="research-notes"><article><span class="note-number">a.</span><div><h3>A different unit of language</h3><p>The candidate moves to byte-pair encoding (BPE), grouping characters into tokens. The experiment will measure what this changes.</p></div></article><article><span class="note-number">b.</span><div><h3>A sense of position</h3><p>Rotary position embeddings give the candidate a different way to represent where tokens sit in a sequence.</p></div></article><article><span class="note-number">c.</span><div><h3>Evidence before conclusions</h3><p>A short pilot comes first. A longer run with a larger training corpus follows, with a comparison after both runs finish.</p></div></article></div>
+    </section>
+    <section class="training-section" id="training" aria-labelledby="training-title"><div class="wrap section-space">
+      <div class="section-heading"><div><p class="eyebrow">03 / Training journal</p><h2 id="training-title">Watch the next<br>chapter take shape.</h2></div><div class="training-heading-note"><span class="badge" id="training-phase">Awaiting run report</span><p id="training-summary">First, a thirty-minute pilot of the upgrade. Then, a twelve-hour run on a larger corpus. Results will appear after evaluation.</p></div></div>
+      <div class="timeline" aria-label="Training sequence"><div class="timeline-step"><span class="step-dot">1</span><p class="eyebrow">Validate the upgrade</p><h3>30-minute pilot</h3><p id="pilot-timeline-status">Awaiting run report</p></div><div class="timeline-step"><span class="step-dot">2</span><p class="eyebrow">Give it more to learn</p><h3>12-hour extended run</h3><p id="extended-timeline-status">Follows the pilot</p></div><div class="timeline-step"><span class="step-dot">3</span><p class="eyebrow">Compare the evidence</p><h3>Review &amp; release</h3><p id="comparison-timeline-status">After both runs finish</p></div></div>
+      <div class="schedule"><span class="eyebrow">Requested finish</span><p id="target-finish">30 September 2026 · 07:00 UTC</p><span id="schedule-note">Start depends on the pilot completing successfully.</span></div>
+      <div class="comparison-header"><h3>First run vs. second run</h3><span class="eyebrow" id="comparison-status">Comparison pending</span></div>
+      <div class="table-scroll" role="region" aria-label="Training run comparison" tabindex="0"><table><thead><tr><th scope="col">Measurement</th><th scope="col" id="pilot-label">First / Pilot</th><th scope="col" id="extended-label">Second / Extended</th></tr></thead><tbody>
+        <tr><th scope="row">Planned duration</th><td id="pilot-duration">30 minutes</td><td id="extended-duration">12 hours</td></tr>
+        <tr><th scope="row">Training corpus</th><td id="pilot-corpus">Pilot corpus</td><td id="extended-corpus">Larger corpus planned</td></tr>
+        <tr><th scope="row">Run status</th><td id="pilot-state">Awaiting report</td><td id="extended-state">Awaiting pilot</td></tr>
+        <tr><th scope="row">Shared evaluation <span class="table-hint">bits per character · lower is better</span></th><td id="pilot-evaluation" class="pending-value">Pending</td><td id="extended-evaluation" class="pending-value">Pending</td></tr>
+      </tbody></table></div>
+      <div class="source-results" id="source-results" role="region" aria-label="Shared evaluation results" tabindex="0" hidden></div>
+      <p class="comparison-note" id="comparison-summary">No winner yet. We will compare the runs on a shared evaluation before drawing conclusions.</p>
+      <p class="table-footnote" id="comparison-method">The longer run continues from the pilot with a larger corpus; the comparison does not isolate the effects of more data and more training.</p>
+      <p class="report-updated" id="report-updated">Waiting for the first published training report.</p>
+    </div></section>
+    <section class="closing wrap"><div><p class="eyebrow">Bring your curiosity</p><h2>See what a small model<br>has to say.</h2></div><div><a class="button primary" href="#models">Choose a model <span aria-hidden="true">↗</span></a><p>Built from scratch. Trained locally.<br>An ongoing research preview.</p></div></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true">h</span>homunculi<span class="brand-period">.</span></a><p>A small language model. An ongoing experiment.</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
