@@ -1,5 +1,7 @@
 {
   "chat_url": "https://reseller-grip-infrared-example.trycloudflare.com/",
-  "model": "v4 chat model with sourced lookup (crypto/forex education, cybernetics and AI); T-055 research preview",
-  "updated": "2026-09-28T11:45:00Z"
+  "model": "chat v0.5 (homunculi 0.9.0): v5-general chat model after broad pretraining; the model answers by itself; research preview",
+  "updated": "2026-09-29T13:40:00Z",
+  "ultra_url": "https://reseller-grip-infrared-example.trycloudflare.com/ultra",
+  "specialist_url": "https://promised-photographs-visits-interim.trycloudflare.com/"
 }

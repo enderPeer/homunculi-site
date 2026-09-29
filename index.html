@@ -39,6 +39,8 @@
   its sources, and it chats about everything else.</p>
   <div class="actions">
     <a class="button primary" id="chat" href="https://reseller-grip-infrared-example.trycloudflare.com/">Chat</a>
+    <a class="button secondary" id="ultra" href="https://reseller-grip-infrared-example.trycloudflare.com/ultra">Ultra mode</a>
+    <a class="button secondary" id="specialist" href="https://promised-photographs-visits-interim.trycloudflare.com/">Specialist (experimental)</a>
     <a class="button secondary" href="https://github.com/enderPeer/homunculi">Repository</a>
   </div>
   <p class="muted" id="model">Research preview. Education only: no investment, trading, tax or legal advice,
@@ -53,6 +55,8 @@
     .then(function (e) {
       if (!e || !e.chat_url) return;
       document.getElementById("chat").href = e.chat_url;
+      if (e.ultra_url) document.getElementById("ultra").href = e.ultra_url;
+      if (e.specialist_url) document.getElementById("specialist").href = e.specialist_url;
     })
     .catch(function () {});
 </script>
