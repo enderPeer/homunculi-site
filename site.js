@@ -134,8 +134,16 @@ function renderTraining(report) {
     write("comparison-status", comparison.status === "pending" ? "Comparison pending" : humanState(comparison.status));
     write("comparison-timeline-status", humanState(comparison.status));
     write("comparison-method", comparison.note);
-    write("comparison-summary", comparison.summary);
-    if (Array.isArray(comparison.sources) && comparison.sources.length) {
+    if (comparison.status === "not_run") {
+      write("comparison-summary", "No comparison is available because the requested second run did not take place.");
+      write("pilot-evaluation", "Not compared");
+      write("extended-evaluation", "Not run");
+      byId("source-results").replaceChildren();
+      byId("source-results").hidden = true;
+    } else {
+      write("comparison-summary", comparison.summary);
+    }
+    if (comparison.status !== "not_run" && Array.isArray(comparison.sources) && comparison.sources.length) {
       const measuredCount = sourceResults(comparison.sources);
       if (measuredCount && !comparison.summary) write("comparison-summary", "Results are reported for each evaluation source. A negative change means the extended run used fewer bits per character on that source.");
     }
