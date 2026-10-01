@@ -1,15 +1,52 @@
 {
+  "updated": "2026-10-01T14:45:00Z",
+  "bots": [
+    {
+      "id": "classic",
+      "name": "Homunculi Classic",
+      "tag": "v0.5",
+      "desc": "The character-level model, fine-tuned for chat. The most conversational one.",
+      "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old"
+    },
+    {
+      "id": "ultra",
+      "name": "Homunculi Ultra",
+      "tag": "tools",
+      "desc": "Classic with notes, a calculator, a clock and reflection on its own drafts.",
+      "url": "https://handling-tumor-internship-chrome.trycloudflare.com/ultra"
+    },
+    {
+      "id": "a002",
+      "name": "Homunculi A",
+      "tag": "0.0.2 · big run",
+      "desc": "The 24-hour training run (tokens, rotary positions). Not chat-trained: it continues the text you type.",
+      "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new"
+    },
+    {
+      "id": "haishool",
+      "name": "Haishool",
+      "tag": "4b · graph",
+      "desc": "Learns facts, not language: 3,000+ things linked into one graph. Ask what something is or how two things connect.",
+      "url": "https://enderpeer.github.io/haishool/chat.html"
+    },
+    {
+      "id": "haishool-links",
+      "name": "Haishool links explorer",
+      "tag": "4b",
+      "desc": "Walk the knowledge graph step by step from one thing to another.",
+      "url": "https://enderpeer.github.io/haishool/hops.html"
+    },
+    {
+      "id": "atoms",
+      "name": "Haishool Atoms",
+      "tag": "in training",
+      "desc": "Next Haishool: elements, atoms and chemistry from checked rules. Link appears when it is ready.",
+      "url": ""
+    }
+  ],
   "chat_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat",
   "old_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old",
-  "new_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
+  "new_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new",
   "ultra_url": "https://handling-tumor-internship-chrome.trycloudflare.com/ultra",
-  "model_status_url": "https://handling-tumor-internship-chrome.trycloudflare.com/api/models",
-  "training_status_url": "https://handling-tumor-internship-chrome.trycloudflare.com/api/training",
-  "model": "Classic chat v0.5, experimental Homunculi A candidate, and Ultra; each mode reports its actual availability.",
-  "updated": "2026-10-01T08:00:00Z",
-  "repository_url": "https://github.com/enderPeer/homunculi",
-  "specialist_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
-  "specialist": "homunculi a 0.0.2: new model line (tokens, rotary positions), 24 hours of pre-training, no chat training yet; it continues the text you type",
-  "trader_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
-  "new_model": "homunculi a 0.0.2: tokens and rotary positions, 24 hours of pre-training, no chat training yet; it continues the text you type"
+  "repository_url": "https://github.com/enderPeer/homunculi"
 }
