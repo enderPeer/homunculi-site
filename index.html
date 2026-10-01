@@ -37,6 +37,9 @@
   .name { font-weight: 600; font-size: 1.05rem; }
   .tag { font-size: 0.78rem; color: var(--muted); border: 1px solid var(--line);
          border-radius: 999px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
+  .rank { flex: none; width: 2ch; font-weight: 700; font-size: 1.3rem; color: var(--accent); font-variant-numeric: tabular-nums; text-align: center; }
+  .score { font-size: 0.85rem; margin-top: 4px; }
+  .lead a { color: var(--accent); }
   .desc { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
   a.open {
     flex: none; background: var(--accent); color: var(--accent-ink); text-decoration: none;
@@ -50,32 +53,38 @@
   @media (max-width: 480px) {
     li { flex-direction: column; align-items: stretch; }
     a.open { text-align: center; }
+    .rank { text-align: left; }
   }
 </style>
 </head>
 <body>
 <main>
   <h1>Homunculi chatbots</h1>
-  <p class="lead">Small language models trained from scratch on our own machines in Berlin. Pick one; each chat opens in its own window.</p>
+  <p class="lead">Small language models trained from scratch on our own machines in Berlin, ranked best first on an easy 40-question test (<a href="benchmark.html">all questions and answers</a>). Each chat opens in its own window.</p>
   <ul id="bots"></ul>
   <footer>Addresses can change when a server restarts; this page reads them from <a href="endpoint.json">endpoint.json</a>.</footer>
 </main>
 <script>
 // Fallback list; endpoint.json "bots" replaces it when it loads.
 var BOTS = [
-  { id: "classic", name: "Homunculi Classic", tag: "v0.5",
-    desc: "The character-level model, fine-tuned for chat. The most conversational one.",
+  { id: "classic", rank: 1, name: "Homunculi Classic", tag: "v0.5",
+    score: "Easy test: 19 / 40. Best at yes/no questions and money; weak at numbers.",
+    desc: "The character-level model, fine-tuned for chat.",
     url: "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old" },
-  { id: "a002", name: "Homunculi A", tag: "0.0.2 chat · big run",
-    desc: "The 24-hour training run (tokens, rotary positions), now fine-tuned for chat. About as good on facts as Classic.",
-    url: "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new" },
-  { id: "haishool", name: "Haishool", tag: "4b · graph",
+  { id: "haishool", rank: 2, name: "Haishool", tag: "4b · graph",
+    score: "Easy test: 18 / 40. Perfect on capitals and everyday things; cannot answer yes/no or count.",
     desc: "Learns facts, not language: 3,000+ things linked into one graph. Ask what something is or how two things connect.",
     url: "https://enderpeer.github.io/haishool/chat.html" },
-  { id: "haishool-links", name: "Haishool links explorer", tag: "4b",
+  { id: "a002", rank: 3, name: "Homunculi A", tag: "0.0.2 chat · big run",
+    score: "Easy test: 17 / 40. Best at history and animals; weak at everyday things and yes/no.",
+    desc: "The 24-hour training run (tokens, rotary positions), fine-tuned for chat.",
+    url: "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new" },
+  { id: "haishool-links", rank: 4, name: "Haishool links explorer", tag: "4b",
+    score: "Easy test: 17 / 40. Same facts as Haishool, but sometimes walks the graph instead of answering.",
     desc: "Walk the knowledge graph step by step from one thing to another.",
     url: "https://enderpeer.github.io/haishool/hops.html" },
   { id: "atoms", name: "Haishool Atoms", tag: "in training",
+    score: "Not tested yet.",
     desc: "Next Haishool: elements, atoms and chemistry from checked rules. Link appears when it is ready.",
     url: "" }
 ];
@@ -85,6 +94,10 @@ function render(bots) {
   list.textContent = "";
   bots.forEach(function (b) {
     var li = document.createElement("li");
+    var rank = document.createElement("div");
+    rank.className = "rank";
+    rank.textContent = b.rank ? String(b.rank) : "–";
+    li.appendChild(rank);
     var text = document.createElement("div");
     text.className = "text";
     var name = document.createElement("div");
@@ -101,6 +114,12 @@ function render(bots) {
     desc.textContent = b.desc || "";
     text.appendChild(name);
     text.appendChild(desc);
+    if (b.score) {
+      var score = document.createElement("div");
+      score.className = "score";
+      score.textContent = b.score;
+      text.appendChild(score);
+    }
     li.appendChild(text);
     var ok = typeof b.url === "string" && /^https?:\/\//.test(b.url);
     var btn = document.createElement(ok ? "a" : "span");

@@ -1,31 +1,39 @@
 {
-  "updated": "2026-10-01T16:10:00Z",
+  "updated": "2026-10-01T16:45:00Z",
   "bots": [
     {
       "id": "classic",
+      "rank": 1,
       "name": "Homunculi Classic",
       "tag": "v0.5",
-      "desc": "The character-level model, fine-tuned for chat. The most conversational one.",
+      "score": "Easy test: 19 / 40. Best at yes/no questions and money; weak at numbers.",
+      "desc": "The character-level model, fine-tuned for chat.",
       "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old"
     },
     {
-      "id": "a002",
-      "name": "Homunculi A",
-      "tag": "0.0.2 chat · big run",
-      "desc": "The 24-hour training run (tokens, rotary positions), now fine-tuned for chat. About as good on facts as Classic.",
-      "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new"
-    },
-    {
       "id": "haishool",
+      "rank": 2,
       "name": "Haishool",
       "tag": "4b · graph",
+      "score": "Easy test: 18 / 40. Perfect on capitals and everyday things; cannot answer yes/no or count.",
       "desc": "Learns facts, not language: 3,000+ things linked into one graph. Ask what something is or how two things connect.",
       "url": "https://enderpeer.github.io/haishool/chat.html"
     },
     {
+      "id": "a002",
+      "rank": 3,
+      "name": "Homunculi A",
+      "tag": "0.0.2 chat · big run",
+      "score": "Easy test: 17 / 40. Best at history and animals; weak at everyday things and yes/no.",
+      "desc": "The 24-hour training run (tokens, rotary positions), fine-tuned for chat.",
+      "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new"
+    },
+    {
       "id": "haishool-links",
+      "rank": 4,
       "name": "Haishool links explorer",
       "tag": "4b",
+      "score": "Easy test: 17 / 40. Same facts as Haishool, but sometimes walks the graph instead of answering.",
       "desc": "Walk the knowledge graph step by step from one thing to another.",
       "url": "https://enderpeer.github.io/haishool/hops.html"
     },
@@ -33,6 +41,7 @@
       "id": "atoms",
       "name": "Haishool Atoms",
       "tag": "in training",
+      "score": "Not tested yet.",
       "desc": "Next Haishool: elements, atoms and chemistry from checked rules. Link appears when it is ready.",
       "url": ""
     }
@@ -40,5 +49,6 @@
   "chat_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat",
   "old_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old",
   "new_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new",
-  "repository_url": "https://github.com/enderPeer/homunculi"
+  "repository_url": "https://github.com/enderPeer/homunculi",
+  "benchmark_url": "benchmark.html"
 }
