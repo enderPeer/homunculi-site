@@ -6,9 +6,9 @@
   "model_status_url": "https://handling-tumor-internship-chrome.trycloudflare.com/api/models",
   "training_status_url": "https://handling-tumor-internship-chrome.trycloudflare.com/api/training",
   "model": "Classic chat v0.5, experimental Homunculi A candidate, and Ultra; each mode reports its actual availability.",
-  "updated": "2026-09-29T16:00:00Z",
+  "updated": "2026-10-01T07:55:00Z",
   "repository_url": "https://github.com/enderPeer/homunculi",
   "specialist_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
-  "specialist": "homunculi a 0.0.1: trading-focused first test of the new model line (tokens, rotary positions, 30 minutes of training); answers are often wrong",
+  "specialist": "homunculi a 0.0.2: new model line (tokens, rotary positions), 24 hours of pre-training, no chat training yet; it continues the text you type",
   "trader_url": "https://promised-photographs-visits-interim.trycloudflare.com/"
 }
