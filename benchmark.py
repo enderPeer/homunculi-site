@@ -2,7 +2,8 @@
 A reply passes when it contains one of the accepted answers (word match after lowercasing, digits spelled
 out as well). Yes/no items pass only when the reply contains the right word and not the opposite one.
 Greedy decoding (top_k 1), one try per question."""
-import json, re, sys, time, urllib.request
+import argparse, datetime, hashlib, json, re, sys, time, urllib.request
+from pathlib import Path
 
 H = "http://192.168.178.171"
 
@@ -100,20 +101,48 @@ BOTS = {
     "Homunculi A": homunculi("new", 80),            # token model: about 4.5 letters per step
     "Haishool": haishool(8650),
     "Haishool links explorer": haishool(8651),
+    # Preserve the full response for audit, but score only its answer field.
+    # verification.expected / expected_display are rule corrections, not model answers.
+    "Haishool v5": lambda q: post(f"{H}:8652/api/ask", {"question": q}),
 }
 
 if __name__ == "__main__":
-    results = {"benchmark": "easy-v1", "items": [{"area": a, "q": q, "accepted": acc} for a, q, acc in ITEMS], "bots": {}}
-    for name, ask in BOTS.items():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--only", choices=list(BOTS), help="Run just this model; questions and scorer are unchanged.")
+    parser.add_argument("--out", type=Path, default=Path("/tmp/easybench.json"))
+    args = parser.parse_args()
+    if args.out.exists():
+        parser.error("output already exists; preserve the recorded one-try run and choose a new destination")
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    results = {"benchmark": "easy-v1", "items": [{"area": a, "q": q, "accepted": acc} for a, q, acc in ITEMS], "bots": {},
+               "started_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+               "items_sha256": hashlib.sha256(json.dumps(ITEMS, separators=(",", ":")).encode()).hexdigest(),
+               "answer_policy": "Score answer/reply only; never credit separate verification or rule corrections.",
+               "status": "running"}
+    selected = {args.only: BOTS[args.only]} if args.only else BOTS
+    def save():
+        temporary = args.out.with_suffix(args.out.suffix + ".tmp")
+        temporary.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
+        temporary.replace(args.out)
+    save()
+    for name, ask in selected.items():
         rows = []
+        results["bots"][name] = {"score": 0, "of": 0, "rows": rows}
         for area, q, acc in ITEMS:
+            response, error = None, None
             try:
-                reply = ask(q) or ""
+                response = ask(q)
+                reply = (response.get("answer", "") if isinstance(response, dict) else response) or ""
             except Exception as e:
+                error = str(e)
                 reply = f"(error: {e})"
-            rows.append({"area": area, "q": q, "reply": reply, "pass": passes(q, reply, acc)})
+            rows.append({"area": area, "q": q, "reply": reply, "pass": passes(q, reply, acc),
+                         "response": response, "error": error})
+            results["bots"][name].update(score=sum(r["pass"] for r in rows), of=len(rows))
+            save()
             time.sleep(0.3)
         score = sum(r["pass"] for r in rows)
         results["bots"][name] = {"score": score, "of": len(rows), "rows": rows}
         print(name, score, "/", len(rows), flush=True)
-    json.dump(results, open("/tmp/easybench.json", "w"), indent=1)
+    results.update(status="completed", completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat())
+    save()

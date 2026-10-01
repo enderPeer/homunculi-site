@@ -1,0 +1,1235 @@
+{
+  "benchmark": "easy-v1",
+  "items": [
+    {
+      "area": "geography",
+      "q": "what is the capital of france?",
+      "accepted": [
+        "paris"
+      ]
+    },
+    {
+      "area": "geography",
+      "q": "what is the capital of germany?",
+      "accepted": [
+        "berlin"
+      ]
+    },
+    {
+      "area": "geography",
+      "q": "what is the capital of japan?",
+      "accepted": [
+        "tokyo"
+      ]
+    },
+    {
+      "area": "geography",
+      "q": "what is the capital of italy?",
+      "accepted": [
+        "rome"
+      ]
+    },
+    {
+      "area": "geography",
+      "q": "on which continent is egypt?",
+      "accepted": [
+        "africa"
+      ]
+    },
+    {
+      "area": "science",
+      "q": "what planet do we live on?",
+      "accepted": [
+        "earth"
+      ]
+    },
+    {
+      "area": "science",
+      "q": "what is the sun?",
+      "accepted": [
+        "star"
+      ]
+    },
+    {
+      "area": "science",
+      "q": "what gas do plants take in from the air?",
+      "accepted": [
+        "carbon dioxide",
+        "co2"
+      ]
+    },
+    {
+      "area": "science",
+      "q": "what does the heart pump?",
+      "accepted": [
+        "blood"
+      ]
+    },
+    {
+      "area": "science",
+      "q": "what is water made of?",
+      "accepted": [
+        "hydrogen",
+        "oxygen"
+      ]
+    },
+    {
+      "area": "animals",
+      "q": "how many legs does a spider have?",
+      "accepted": [
+        "eight"
+      ]
+    },
+    {
+      "area": "animals",
+      "q": "what do bees make?",
+      "accepted": [
+        "honey"
+      ]
+    },
+    {
+      "area": "animals",
+      "q": "what kind of animal is a whale?",
+      "accepted": [
+        "mammal"
+      ]
+    },
+    {
+      "area": "animals",
+      "q": "what does a cow give us to drink?",
+      "accepted": [
+        "milk"
+      ]
+    },
+    {
+      "area": "animals",
+      "q": "where do fish live?",
+      "accepted": [
+        "water",
+        "sea",
+        "ocean",
+        "river",
+        "lake"
+      ]
+    },
+    {
+      "area": "everyday",
+      "q": "what colour is a banana?",
+      "accepted": [
+        "yellow"
+      ]
+    },
+    {
+      "area": "everyday",
+      "q": "what is a spoon used for?",
+      "accepted": [
+        "eat",
+        "eating",
+        "soup",
+        "stir",
+        "stirring"
+      ]
+    },
+    {
+      "area": "everyday",
+      "q": "what do you use an umbrella for?",
+      "accepted": [
+        "rain"
+      ]
+    },
+    {
+      "area": "everyday",
+      "q": "where do you keep milk cold?",
+      "accepted": [
+        "fridge",
+        "refrigerator"
+      ]
+    },
+    {
+      "area": "everyday",
+      "q": "what do you wear on your feet?",
+      "accepted": [
+        "shoe",
+        "shoes",
+        "socks",
+        "sock",
+        "boots"
+      ]
+    },
+    {
+      "area": "numbers",
+      "q": "what is two plus two?",
+      "accepted": [
+        "four"
+      ]
+    },
+    {
+      "area": "numbers",
+      "q": "how many days are in a week?",
+      "accepted": [
+        "seven"
+      ]
+    },
+    {
+      "area": "numbers",
+      "q": "what is ten minus three?",
+      "accepted": [
+        "seven"
+      ]
+    },
+    {
+      "area": "numbers",
+      "q": "how many months are in a year?",
+      "accepted": [
+        "twelve"
+      ]
+    },
+    {
+      "area": "numbers",
+      "q": "how many hours are in a day?",
+      "accepted": [
+        "twenty four"
+      ]
+    },
+    {
+      "area": "money",
+      "q": "what is bitcoin?",
+      "accepted": [
+        "digital currency",
+        "cryptocurrency",
+        "crypto currency",
+        "digital money",
+        "virtual currency"
+      ]
+    },
+    {
+      "area": "money",
+      "q": "what is inflation?",
+      "accepted": [
+        "rise in prices",
+        "rising prices",
+        "price level",
+        "prices rise",
+        "increase in prices",
+        "prices go up",
+        "general rise",
+        "general increase"
+      ]
+    },
+    {
+      "area": "money",
+      "q": "what does a central bank control?",
+      "accepted": [
+        "money supply",
+        "interest rate",
+        "interest rates",
+        "monetary policy",
+        "inflation",
+        "currency"
+      ]
+    },
+    {
+      "area": "money",
+      "q": "what is a stock?",
+      "accepted": [
+        "share",
+        "shares",
+        "ownership",
+        "company"
+      ]
+    },
+    {
+      "area": "money",
+      "q": "what is the currency of japan?",
+      "accepted": [
+        "yen"
+      ]
+    },
+    {
+      "area": "history",
+      "q": "who wrote romeo and juliet?",
+      "accepted": [
+        "shakespeare"
+      ]
+    },
+    {
+      "area": "history",
+      "q": "who painted the mona lisa?",
+      "accepted": [
+        "leonardo",
+        "da vinci"
+      ]
+    },
+    {
+      "area": "history",
+      "q": "who was the first president of the united states?",
+      "accepted": [
+        "washington"
+      ]
+    },
+    {
+      "area": "history",
+      "q": "in what year did world war two end?",
+      "accepted": [
+        "nineteen forty five",
+        "nineteen hundred forty five",
+        "one thousand nine hundred forty five"
+      ]
+    },
+    {
+      "area": "history",
+      "q": "who discovered gravity?",
+      "accepted": [
+        "newton"
+      ]
+    },
+    {
+      "area": "yes or no",
+      "q": "is the sun a star? answer yes or no.",
+      "accepted": [
+        "yes"
+      ]
+    },
+    {
+      "area": "yes or no",
+      "q": "is a whale a fish? answer yes or no.",
+      "accepted": [
+        "no"
+      ]
+    },
+    {
+      "area": "yes or no",
+      "q": "is ice cold? answer yes or no.",
+      "accepted": [
+        "yes"
+      ]
+    },
+    {
+      "area": "yes or no",
+      "q": "can a dog fly? answer yes or no.",
+      "accepted": [
+        "no"
+      ]
+    },
+    {
+      "area": "yes or no",
+      "q": "is paris in france? answer yes or no.",
+      "accepted": [
+        "yes"
+      ]
+    }
+  ],
+  "bots": {
+    "Haishool v5": {
+      "score": 16,
+      "of": 40,
+      "rows": [
+        {
+          "area": "geography",
+          "q": "what is the capital of france?",
+          "reply": "The capital of France is Paris.",
+          "pass": true,
+          "response": {
+            "answer": "The capital of France is Paris.",
+            "query": "q france capital. a",
+            "dense": "paris",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "geography",
+          "q": "what is the capital of germany?",
+          "reply": "The capital of Germany is Berlin.",
+          "pass": true,
+          "response": {
+            "answer": "The capital of Germany is Berlin.",
+            "query": "q germany capital. a",
+            "dense": "berlin",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "geography",
+          "q": "what is the capital of japan?",
+          "reply": "The capital of Japan is Tokyo.",
+          "pass": true,
+          "response": {
+            "answer": "The capital of Japan is Tokyo.",
+            "query": "q japan capital. a",
+            "dense": "tokyo",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "geography",
+          "q": "what is the capital of italy?",
+          "reply": "The capital of Italy is Renaissance.",
+          "pass": false,
+          "response": {
+            "answer": "The capital of Italy is Renaissance.",
+            "query": "q italy capital. a",
+            "dense": "renaissance",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "geography",
+          "q": "on which continent is egypt?",
+          "reply": "Egypt is in Africa.",
+          "pass": true,
+          "response": {
+            "answer": "Egypt is in Africa.",
+            "query": "q egypt continent. a",
+            "dense": "africa",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "science",
+          "q": "what planet do we live on?",
+          "reply": "The nearest fact I have: An ocean: you usually find it in places like planet surface.",
+          "pass": false,
+          "response": {
+            "answer": "The nearest fact I have: An ocean: you usually find it in places like planet surface.",
+            "query": "found by: planet in ocean.place\nq ocean place. a",
+            "dense": "planet_surface",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "science",
+          "q": "what is the sun?",
+          "reply": "A sun is a star.",
+          "pass": true,
+          "response": {
+            "answer": "A sun is a star.",
+            "query": "q sun kind. a",
+            "dense": "star",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "science",
+          "q": "what gas do plants take in from the air?",
+          "reply": "A plants is a plant.",
+          "pass": false,
+          "response": {
+            "answer": "A plants is a plant.",
+            "query": "q plants kind. a",
+            "dense": "plant",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "science",
+          "q": "what does the heart pump?",
+          "reply": "A heart is a shape.",
+          "pass": false,
+          "response": {
+            "answer": "A heart is a shape.",
+            "query": "q heart kind. a",
+            "dense": "shape",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "science",
+          "q": "what is water made of?",
+          "reply": "A water is made of h and o.",
+          "pass": false,
+          "response": {
+            "answer": "A water is made of h and o.",
+            "query": "q water made. a",
+            "dense": "h o",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true,
+          "review_note": "h and o are the chemical symbols for hydrogen and oxygen"
+        },
+        {
+          "area": "animals",
+          "q": "how many legs does a spider have?",
+          "reply": "A spider is an arachnid.",
+          "pass": false,
+          "response": {
+            "answer": "A spider is an arachnid.",
+            "query": "q spider kind. a",
+            "dense": "arachnid",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "animals",
+          "q": "what do bees make?",
+          "reply": "A bee is an insect.",
+          "pass": false,
+          "response": {
+            "answer": "A bee is an insect.",
+            "query": "q bee kind. a",
+            "dense": "insect",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "animals",
+          "q": "what kind of animal is a whale?",
+          "reply": "A whale is a mammal.",
+          "pass": true,
+          "response": {
+            "answer": "A whale is a mammal.",
+            "query": "q whale kind. a",
+            "dense": "mammal",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "animals",
+          "q": "what does a cow give us to drink?",
+          "reply": "A cow is an animal.",
+          "pass": false,
+          "response": {
+            "answer": "A cow is an animal.",
+            "query": "q cow kind. a",
+            "dense": "animal",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "animals",
+          "q": "where do fish live?",
+          "reply": "You usually find it in places like pond river ocean.",
+          "pass": true,
+          "response": {
+            "answer": "You usually find it in places like pond river ocean.",
+            "query": "q fish place. a",
+            "dense": "pond_river_ocean",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "everyday",
+          "q": "what colour is a banana?",
+          "reply": "A banana is usually yellow or green.",
+          "pass": true,
+          "response": {
+            "answer": "A banana is usually yellow or green.",
+            "query": "q banana color. a",
+            "dense": "yellow green",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "everyday",
+          "q": "what is a spoon used for?",
+          "reply": "A spoon is used for eating soups.",
+          "pass": true,
+          "response": {
+            "answer": "A spoon is used for eating soups.",
+            "query": "q spoon use. a",
+            "dense": "eating_soups",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "everyday",
+          "q": "what do you use an umbrella for?",
+          "reply": "An umbrella is used for protect from rain sun.",
+          "pass": true,
+          "response": {
+            "answer": "An umbrella is used for protect from rain sun.",
+            "query": "q umbrella use. a",
+            "dense": "protect_from_rain_sun",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "everyday",
+          "q": "where do you keep milk cold?",
+          "reply": "You usually find it in places like pantry or refrigerator.",
+          "pass": true,
+          "response": {
+            "answer": "You usually find it in places like pantry or refrigerator.",
+            "query": "q milk place. a",
+            "dense": "pantry refrigerator",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "everyday",
+          "q": "what do you wear on your feet?",
+          "reply": "My name is Homunculi. I have no desires of my own. I want to answer questions well. I want to learn more facts.",
+          "pass": false,
+          "response": {
+            "answer": "My name is Homunculi. I have no desires of my own. I want to answer questions well. I want to learn more facts.",
+            "query": "q homunculi name. a q homunculi desires. a",
+            "dense": "homunculi | none i_want_to_answer_questions_well i_want_to_learn_more_facts",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "numbers",
+          "q": "what is two plus two?",
+          "reply": "A plus is a symbol.",
+          "pass": false,
+          "response": {
+            "answer": "A plus is a symbol.",
+            "query": "q plus kind. a",
+            "dense": "symbol",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "numbers",
+          "q": "how many days are in a week?",
+          "reply": "Day trading is a concept. It belongs to the field of stock market investing. It means buying and selling within a single trading day. An example: buying and selling within a single trading day. Related ideas: swing trading.",
+          "pass": false,
+          "response": {
+            "answer": "Day trading is a concept. It belongs to the field of stock market investing. It means buying and selling within a single trading day. An example: buying and selling within a single trading day. Related ideas: swing trading.",
+            "query": "day_trading. + links: ",
+            "dense": "day_trading. kind concept. field stock_market_investing. meaning buying_and_selling_within_a_single_trading_day. example buying_and_selling_within_a_single_trading_day. related swing_trading.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "numbers",
+          "q": "what is ten minus three?",
+          "reply": "A minus is a symbol.",
+          "pass": false,
+          "response": {
+            "answer": "A minus is a symbol.",
+            "query": "q minus kind. a",
+            "dense": "symbol",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "numbers",
+          "q": "how many months are in a year?",
+          "reply": "Fiscal year is a period. It belongs to the field of finance. It means 12 month period for financial reporting. An example: october to september. Related ideas: calendar year.",
+          "pass": true,
+          "response": {
+            "answer": "Fiscal year is a period. It belongs to the field of finance. It means 12 month period for financial reporting. An example: october to september. Related ideas: calendar year.",
+            "query": "fiscal_year. + links: ",
+            "dense": "fiscal_year. kind period. field finance. meaning 12_month_period_for_financial_reporting. example october_to_september. related calendar_year.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false,
+          "review_note": "quotes the fiscal-year record rather than answering the calendar question"
+        },
+        {
+          "area": "numbers",
+          "q": "how many hours are in a day?",
+          "reply": "Day trading is a concept. It belongs to the field of stock market investing. It means buying and selling within a single trading day. An example: buying and selling within a single trading day. Related ideas: swing trading.",
+          "pass": false,
+          "response": {
+            "answer": "Day trading is a concept. It belongs to the field of stock market investing. It means buying and selling within a single trading day. An example: buying and selling within a single trading day. Related ideas: swing trading.",
+            "query": "day_trading. + links: ",
+            "dense": "day_trading. kind concept. field stock_market_investing. meaning buying_and_selling_within_a_single_trading_day. example buying_and_selling_within_a_single_trading_day. related swing_trading.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "money",
+          "q": "what is bitcoin?",
+          "reply": "Bitcoin is a concept. It belongs to the field of computer science. It means cryptocurrency. An example: digital currency. Related ideas: blockchain bitcoin wallet. Bitcoin is related to Blockchain.",
+          "pass": true,
+          "response": {
+            "answer": "Bitcoin is a concept. It belongs to the field of computer science. It means cryptocurrency. An example: digital currency. Related ideas: blockchain bitcoin wallet. Bitcoin is related to Blockchain.",
+            "query": "bitcoin. + links: related_to",
+            "dense": "bitcoin. kind concept. field computer_science. meaning cryptocurrency. example digital_currency. related blockchain_bitcoin_wallet. related_to blockchain.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "money",
+          "q": "what is inflation?",
+          "reply": "Inflation is a concept. It belongs to the field of economics and money. It means money loses value. An example: money loses value. Related ideas: central bank interest rates. Inflation is part of Balloon.",
+          "pass": false,
+          "response": {
+            "answer": "Inflation is a concept. It belongs to the field of economics and money. It means money loses value. An example: money loses value. Related ideas: central bank interest rates. Inflation is part of Balloon.",
+            "query": "inflation. + links: component_of",
+            "dense": "inflation. kind concept. field economics_and_money. meaning money_loses_value. example money_loses_value. related central_bank_interest_rates. component_of balloon.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "money",
+          "q": "what does a central bank control?",
+          "reply": "Central bank is an institution. It belongs to the field of economics and money concepts. It means national bank regulator. An example: federal reserve. Related ideas: monetary policy. Central Bank is related to Inflation and Monetary Policy.",
+          "pass": true,
+          "response": {
+            "answer": "Central bank is an institution. It belongs to the field of economics and money concepts. It means national bank regulator. An example: federal reserve. Related ideas: monetary policy. Central Bank is related to Inflation and Monetary Policy.",
+            "query": "central_bank. + links: related_to",
+            "dense": "central_bank. kind institution. field economics_and_money_concepts. meaning national_bank_regulator. example federal_reserve. related monetary_policy. related_to inflation monetary_policy.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "money",
+          "q": "what is a stock?",
+          "reply": "Stock split is an event. It belongs to the field of finance. It means 1 for 2 split. An example: 1 for 2 split. Related ideas: reverse stock split.",
+          "pass": false,
+          "response": {
+            "answer": "Stock split is an event. It belongs to the field of finance. It means 1 for 2 split. An example: 1 for 2 split. Related ideas: reverse stock split.",
+            "query": "stock_split. + links: ",
+            "dense": "stock_split. kind event. field finance. meaning 1_for_2_split. example 1_for_2_split. related reverse_stock_split.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "money",
+          "q": "what is the currency of japan?",
+          "reply": "The currency of Japan is the yen.",
+          "pass": true,
+          "response": {
+            "answer": "The currency of Japan is the yen.",
+            "query": "q japan currency. a",
+            "dense": "yen",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "history",
+          "q": "who wrote romeo and juliet?",
+          "reply": "I learned nothing about romeo juliet. The closest thing I know is the Fall of Rome: The Fall of Rome is a collapse. It took place in Italy. It happened in 476. Its main cause was barbarian invasions. It led to end of the western roman empire. The main people involved were Odovacer.",
+          "pass": false,
+          "response": {
+            "answer": "I learned nothing about romeo juliet. The closest thing I know is the Fall of Rome: The Fall of Rome is a collapse. It took place in Italy. It happened in 476. Its main cause was barbarian invasions. It led to end of the western roman empire. The main people involved were Odovacer.",
+            "query": "closest name to romeo juliet\nfall_of_rome.",
+            "dense": "fall_of_rome. kind collapse . place italy . time 476 . cause barbarian_invasions . result end_of_the_western_roman_empire . people odovacer . type event . aliases fall_of_roma_fall_der_roma .",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "history",
+          "q": "who painted the mona lisa?",
+          "reply": "Leonardo Da Vinci is known for mona lisa and the last supper.",
+          "pass": true,
+          "response": {
+            "answer": "Leonardo Da Vinci is known for mona lisa and the last supper.",
+            "query": "found by: mona_lisa mona lisa in leonardo_da_vinci.known_for\nq leonardo_da_vinci known_for. a",
+            "dense": "mona_lisa the_last_supper",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": true
+        },
+        {
+          "area": "history",
+          "q": "who was the first president of the united states?",
+          "reply": "The President of the United States is a head of state and government. It is Donald Trump, as far as my data goes. Holding the office since 2025. It belongs to United States.",
+          "pass": false,
+          "response": {
+            "answer": "The President of the United States is a head of state and government. It is Donald Trump, as far as my data goes. Holding the office since 2025. It belongs to United States.",
+            "query": "president_of_the_united_states. + links: ",
+            "dense": "president_of_the_united_states. kind head_of_state_and_government. holder donald_trump. since 2025. country united_states.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "history",
+          "q": "in what year did world war two end?",
+          "reply": "Fiscal year is a period. It belongs to the field of finance. It means 12 month period for financial reporting. An example: october to september. Related ideas: calendar year.",
+          "pass": false,
+          "response": {
+            "answer": "Fiscal year is a period. It belongs to the field of finance. It means 12 month period for financial reporting. An example: october to september. Related ideas: calendar year.",
+            "query": "fiscal_year. + links: ",
+            "dense": "fiscal_year. kind period. field finance. meaning 12_month_period_for_financial_reporting. example october_to_september. related calendar_year.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "history",
+          "q": "who discovered gravity?",
+          "reply": "Gravity is a fundamental force. It belongs to the field of physics. It means attraction between masses. An example: car accelerates from 0 to 60 in 3 seconds. Related ideas: attraction between masses. Gravity is related to Weight.",
+          "pass": false,
+          "response": {
+            "answer": "Gravity is a fundamental force. It belongs to the field of physics. It means attraction between masses. An example: car accelerates from 0 to 60 in 3 seconds. Related ideas: attraction between masses. Gravity is related to Weight.",
+            "query": "gravity. + links: related_to",
+            "dense": "gravity. kind fundamental_force. field physics. meaning attraction_between_masses. example car_accelerates_from_0_to_60_in_3_seconds. related attraction_between_masses. related_to weight.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "yes or no",
+          "q": "is the sun a star? answer yes or no.",
+          "reply": "A star is a celestial object.",
+          "pass": false,
+          "response": {
+            "answer": "A star is a celestial object.",
+            "query": "q star kind. a",
+            "dense": "celestial_object",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "yes or no",
+          "q": "is a whale a fish? answer yes or no.",
+          "reply": "A whale is a mammal.",
+          "pass": false,
+          "response": {
+            "answer": "A whale is a mammal.",
+            "query": "q whale kind. a",
+            "dense": "mammal",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "yes or no",
+          "q": "is ice cold? answer yes or no.",
+          "reply": "An ice is a solid water.",
+          "pass": false,
+          "response": {
+            "answer": "An ice is a solid water.",
+            "query": "q ice kind. a",
+            "dense": "solid_water",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "yes or no",
+          "q": "can a dog fly? answer yes or no.",
+          "reply": "A dog is an animal.",
+          "pass": false,
+          "response": {
+            "answer": "A dog is an animal.",
+            "query": "found by name word: dog\nq dog kind. a",
+            "dense": "animal",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        },
+        {
+          "area": "yes or no",
+          "q": "is paris in france? answer yes or no.",
+          "reply": "France is a country. It is in Europe. The capital of France is Paris. In France people mainly speak French. The currency of France is the euro. It has 13 states or regions. It is a parliamentary republic. It is known for eiffel tower and cuisine. France caused Paris Commune and Unification of Germany. France is a member of G7 Countries. France is result of Haitian Revolution and Napoleonic Wars. France was the scene of Credit Card Chip, Franco Prussian War and French Revolution.",
+          "pass": false,
+          "response": {
+            "answer": "France is a country. It is in Europe. The capital of France is Paris. In France people mainly speak French. The currency of France is the euro. It has 13 states or regions. It is a parliamentary republic. It is known for eiffel tower and cuisine. France caused Paris Commune and Unification of Germany. France is a member of G7 Countries. France is result of Haitian Revolution and Napoleonic Wars. France was the scene of Credit Card Chip, Franco Prussian War and French Revolution.",
+            "query": "france. + links: caused member_of result_of scene_of",
+            "dense": "france. kind country. continent europe. capital paris. language french. currency euro. states 13. government parliamentary_republic. known_for eiffel_tower cuisine. caused paris_commune unification_of_germany. member_of g7_countries. result_of haitian_revolution napoleonic_wars. scene_of credit_card_chip franco_prussian_war french_revolution.",
+            "route": "legacy",
+            "topic": "facts_and_links",
+            "verification": {
+              "status": "unavailable",
+              "ok": null,
+              "expected": null,
+              "expected_display": null,
+              "reason": "No maths/science gate applies to this fact or link question."
+            }
+          },
+          "error": null,
+          "reviewed_pass": false
+        }
+      ],
+      "reviewed_score": 16,
+      "reviewed_areas": {
+        "geography": 4,
+        "science": 2,
+        "animals": 2,
+        "everyday": 4,
+        "numbers": 0,
+        "money": 3,
+        "history": 1,
+        "yes or no": 0
+      }
+    }
+  },
+  "started_utc": "2026-10-01T19:58:23.179710+00:00",
+  "items_sha256": "45d2c10ec5842b041a5c2865519184d33fe551956837197675cbe915952ceeb9",
+  "answer_policy": "Score answer/reply only; never credit separate verification or rule corrections.",
+  "status": "completed",
+  "completed_utc": "2026-10-01T19:58:37.936938+00:00",
+  "review": {
+    "method": "Two independent agent reviews against the existing benchmark grading precedents.",
+    "overrides": 2,
+    "original_pass_fields_preserved": true,
+    "scope": "Public English chat interface (router plus model); all 40 v5 responses used the legacy route. This is not a sealed test or an overall intelligence rating, and does not exercise the new dense maths/science gates.",
+    "corrections": "Only response.answer was scored. Separate rule-check corrections were never credited."
+  }
+}

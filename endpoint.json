@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T16:45:00Z",
+  "updated": "2026-10-01T20:02:17Z",
   "bots": [
     {
       "id": "classic",
@@ -14,8 +14,8 @@
       "id": "haishool",
       "rank": 2,
       "name": "Haishool",
-      "tag": "4b · graph",
-      "score": "Easy test: 18 / 40. Perfect on capitals and everyday things; cannot answer yes/no or count.",
+      "tag": "4b \u00b7 graph",
+      "score": "Easy test: 18 / 40. Geography 5/5 and everyday questions 4/5; weak at yes/no and numbers.",
       "desc": "Learns facts, not language: 3,000+ things linked into one graph. Ask what something is or how two things connect.",
       "url": "https://enderpeer.github.io/haishool/chat.html"
     },
@@ -23,7 +23,7 @@
       "id": "a002",
       "rank": 3,
       "name": "Homunculi A",
-      "tag": "0.0.2 chat · big run",
+      "tag": "0.0.2 chat \u00b7 big run",
       "score": "Easy test: 17 / 40. Best at history and animals; weak at everyday things and yes/no.",
       "desc": "The 24-hour training run (tokens, rotary positions), fine-tuned for chat.",
       "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new"
@@ -39,16 +39,20 @@
     },
     {
       "id": "atoms",
-      "name": "Haishool Atoms",
-      "tag": "in training",
-      "score": "Not tested yet.",
-      "desc": "Next Haishool: elements, atoms and chemistry from checked rules. Link appears when it is ready.",
-      "url": ""
+      "name": "Haishool v5 (Atoms)",
+      "tag": "v5 - maths & science",
+      "score": "Easy test: 16 / 40. Current English routing misses many questions; separate science scores below.",
+      "desc": "The new 33M-parameter model: arithmetic, elements, chemistry and physics, with visible rule checks and model errors.",
+      "url": "https://crawford-earn-function-concern.trycloudflare.com/",
+      "rank": 5
     }
   ],
   "chat_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat",
   "old_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old",
   "new_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new",
   "repository_url": "https://github.com/enderPeer/homunculi",
-  "benchmark_url": "benchmark.html"
+  "benchmark_url": "benchmark.html",
+  "v5_url": "https://crawford-earn-function-concern.trycloudflare.com/",
+  "v5_model": "haishool-v5-8x512-selected.pt",
+  "v5_benchmark_results": "benchmark-v5.json"
 }

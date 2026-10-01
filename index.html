@@ -40,6 +40,14 @@
   .rank { flex: none; width: 2ch; font-weight: 700; font-size: 1.3rem; color: var(--accent); font-variant-numeric: tabular-nums; text-align: center; }
   .score { font-size: 0.85rem; margin-top: 4px; }
   .lead a { color: var(--accent); }
+  .comparison { margin-top: 32px; padding: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+  .comparison h2 { margin: 0 0 10px; font-size: 1.2rem; }
+  .comparison p { margin: 10px 0; font-size: .92rem; }
+  .comparison a { color: var(--accent); }
+  .measures { width: 100%; border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; }
+  .measures th, .measures td { padding: 8px 0; border-bottom: 1px solid var(--line); text-align: left; }
+  .measures td { text-align: right; white-space: nowrap; }
+  .note { color: var(--muted); }
   .desc { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
   a.open {
     flex: none; background: var(--accent); color: var(--accent-ink); text-decoration: none;
@@ -60,33 +68,75 @@
 <body>
 <main>
   <h1>Homunculi chatbots</h1>
-  <p class="lead">Small language models trained from scratch on our own machines in Berlin, ranked best first on an easy 40-question test (<a href="benchmark.html">all questions and answers</a>). Each chat opens in its own window.</p>
+  <p class="lead">Small language models trained from scratch on our own machines in Berlin, ranked best first on an easy 40-question test (<a href="benchmark.html">all questions and answers</a>). Each chat opens in its own window. Small score differences are not a reliable overall ranking.</p>
   <ul id="bots"></ul>
+  <section class="comparison" aria-labelledby="comparison-title">
+    <h2 id="comparison-title">What the new v5 adds</h2>
+    <p>V5 is an experimental maths/science specialist. It now routes supported English questions to its trained formats, shows the model's answer, and checks it against independent rules. Corrections are labelled separately.</p>
+    <p><strong>English chat test: 16/40, fifth in this small test.</strong> The questions and grading rules were unchanged. All 40 answers used the legacy fact/link route; this test did not exercise v5's new calculation routes. See <a href="benchmark.html">every answer and reviewed grade</a> or the <a href="benchmark-v5.json">v5 run data</a>.</p>
+    <table class="measures">
+      <caption style="text-align:left;margin:16px 0 6px;font-weight:600">Separate v5 research evaluation</caption>
+      <tbody>
+        <tr><th scope="row">Sealed exact answers, 11 truth/prediction topics</th><td>1,110 / 2,816 · 39.4%</td></tr>
+        <tr><th scope="row">Accepted by each topic's rules</th><td>1,261 / 2,816 · 44.8%</td></tr>
+        <tr><th scope="row">Sealed maths, all forms</th><td>191 / 256 · 74.6%</td></tr>
+        <tr><th scope="row">Worked arithmetic subset</th><td>36 / 36</td></tr>
+        <tr><th scope="row">Sampled trained-fact recall</th><td>969 / 1,000 · 96.9%</td></tr>
+      </tbody>
+    </table>
+    <p class="note">These research questions used dense prompt formats and a different dataset. They are not substitutes for the English chat score, and the other models did not take this sealed test. World handoff checks permit 5% numerical error; exact accuracy is shown separately. Several numerical physics predictions remain only 0–1.6% exact.</p>
+    <p><strong>Choose by task:</strong> Classic for conversational text; Haishool v4b for established facts and graph connections; v5 for experimenting with checked maths and science. The links explorer is another interface to v4b's graph. None of these small experiments is consistently reliable.</p>
+  </section>
   <footer>Addresses can change when a server restarts; this page reads them from <a href="endpoint.json">endpoint.json</a>.</footer>
 </main>
 <script>
 // Fallback list; endpoint.json "bots" replaces it when it loads.
 var BOTS = [
-  { id: "classic", rank: 1, name: "Homunculi Classic", tag: "v0.5",
-    score: "Easy test: 19 / 40. Best at yes/no questions and money; weak at numbers.",
-    desc: "The character-level model, fine-tuned for chat.",
-    url: "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old" },
-  { id: "haishool", rank: 2, name: "Haishool", tag: "4b · graph",
-    score: "Easy test: 18 / 40. Perfect on capitals and everyday things; cannot answer yes/no or count.",
-    desc: "Learns facts, not language: 3,000+ things linked into one graph. Ask what something is or how two things connect.",
-    url: "https://enderpeer.github.io/haishool/chat.html" },
-  { id: "a002", rank: 3, name: "Homunculi A", tag: "0.0.2 chat · big run",
-    score: "Easy test: 17 / 40. Best at history and animals; weak at everyday things and yes/no.",
-    desc: "The 24-hour training run (tokens, rotary positions), fine-tuned for chat.",
-    url: "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new" },
-  { id: "haishool-links", rank: 4, name: "Haishool links explorer", tag: "4b",
-    score: "Easy test: 17 / 40. Same facts as Haishool, but sometimes walks the graph instead of answering.",
-    desc: "Walk the knowledge graph step by step from one thing to another.",
-    url: "https://enderpeer.github.io/haishool/hops.html" },
-  { id: "atoms", name: "Haishool Atoms", tag: "in training",
-    score: "Not tested yet.",
-    desc: "Next Haishool: elements, atoms and chemistry from checked rules. Link appears when it is ready.",
-    url: "" }
+  {
+    "id": "classic",
+    "rank": 1,
+    "name": "Homunculi Classic",
+    "tag": "v0.5",
+    "score": "Easy test: 19 / 40. Best at yes/no questions and money; weak at numbers.",
+    "desc": "The character-level model, fine-tuned for chat.",
+    "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old"
+  },
+  {
+    "id": "haishool",
+    "rank": 2,
+    "name": "Haishool",
+    "tag": "4b \u00b7 graph",
+    "score": "Easy test: 18 / 40. Geography 5/5 and everyday questions 4/5; weak at yes/no and numbers.",
+    "desc": "Learns facts, not language: 3,000+ things linked into one graph. Ask what something is or how two things connect.",
+    "url": "https://enderpeer.github.io/haishool/chat.html"
+  },
+  {
+    "id": "a002",
+    "rank": 3,
+    "name": "Homunculi A",
+    "tag": "0.0.2 chat \u00b7 big run",
+    "score": "Easy test: 17 / 40. Best at history and animals; weak at everyday things and yes/no.",
+    "desc": "The 24-hour training run (tokens, rotary positions), fine-tuned for chat.",
+    "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new"
+  },
+  {
+    "id": "haishool-links",
+    "rank": 4,
+    "name": "Haishool links explorer",
+    "tag": "4b",
+    "score": "Easy test: 17 / 40. Same facts as Haishool, but sometimes walks the graph instead of answering.",
+    "desc": "Walk the knowledge graph step by step from one thing to another.",
+    "url": "https://enderpeer.github.io/haishool/hops.html"
+  },
+  {
+    "id": "atoms",
+    "name": "Haishool v5 (Atoms)",
+    "tag": "v5 - maths & science",
+    "score": "Easy test: 16 / 40. Current English routing misses many questions; separate science scores below.",
+    "desc": "The new 33M-parameter model: arithmetic, elements, chemistry and physics, with visible rule checks and model errors.",
+    "url": "https://crawford-earn-function-concern.trycloudflare.com/",
+    "rank": 5
+  }
 ];
 
 function render(bots) {
