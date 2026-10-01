@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T14:45:00Z",
+  "updated": "2026-10-01T15:35:00Z",
   "bots": [
     {
       "id": "classic",
@@ -18,8 +18,8 @@
     {
       "id": "a002",
       "name": "Homunculi A",
-      "tag": "0.0.2 · big run",
-      "desc": "The 24-hour training run (tokens, rotary positions). Not chat-trained: it continues the text you type.",
+      "tag": "0.0.2 chat · big run",
+      "desc": "The 24-hour training run (tokens, rotary positions), now fine-tuned for chat. About as good on facts as Classic.",
       "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new"
     },
     {
