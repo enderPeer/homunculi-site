@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01T15:35:00Z",
+  "updated": "2026-10-01T16:10:00Z",
   "bots": [
     {
       "id": "classic",
@@ -7,13 +7,6 @@
       "tag": "v0.5",
       "desc": "The character-level model, fine-tuned for chat. The most conversational one.",
       "url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old"
-    },
-    {
-      "id": "ultra",
-      "name": "Homunculi Ultra",
-      "tag": "tools",
-      "desc": "Classic with notes, a calculator, a clock and reflection on its own drafts.",
-      "url": "https://handling-tumor-internship-chrome.trycloudflare.com/ultra"
     },
     {
       "id": "a002",
@@ -47,6 +40,5 @@
   "chat_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat",
   "old_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old",
   "new_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new",
-  "ultra_url": "https://handling-tumor-internship-chrome.trycloudflare.com/ultra",
   "repository_url": "https://github.com/enderPeer/homunculi"
 }
