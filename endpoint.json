@@ -1,14 +1,15 @@
 {
   "chat_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat",
   "old_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=old",
-  "new_url": "https://handling-tumor-internship-chrome.trycloudflare.com/chat?model=new",
+  "new_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
   "ultra_url": "https://handling-tumor-internship-chrome.trycloudflare.com/ultra",
   "model_status_url": "https://handling-tumor-internship-chrome.trycloudflare.com/api/models",
   "training_status_url": "https://handling-tumor-internship-chrome.trycloudflare.com/api/training",
   "model": "Classic chat v0.5, experimental Homunculi A candidate, and Ultra; each mode reports its actual availability.",
-  "updated": "2026-10-01T07:55:00Z",
+  "updated": "2026-10-01T08:00:00Z",
   "repository_url": "https://github.com/enderPeer/homunculi",
   "specialist_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
   "specialist": "homunculi a 0.0.2: new model line (tokens, rotary positions), 24 hours of pre-training, no chat training yet; it continues the text you type",
-  "trader_url": "https://promised-photographs-visits-interim.trycloudflare.com/"
+  "trader_url": "https://promised-photographs-visits-interim.trycloudflare.com/",
+  "new_model": "homunculi a 0.0.2: tokens and rotary positions, 24 hours of pre-training, no chat training yet; it continues the text you type"
 }
